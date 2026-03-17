@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Products", href: "#products" },
-  { label: "Developers", href: "#developer" },
-  { label: "Docs", href: "#" },
-  { label: "Pricing", href: "#" },
+  { label: "Products", href: "/products" },
+  { label: "Developers", href: "/developers" },
+  { label: "Docs", href: "/docs" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 const Navbar = () => {
@@ -24,9 +25,9 @@ const Navbar = () => {
           onMouseLeave={() => setHoveredLink(null)}
         >
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               onMouseEnter={() => setHoveredLink(link.label)}
               className="relative px-6 py-2.5 text-[14px] font-medium transition-colors duration-500 z-10 text-white/50 hover:text-white"
             >
@@ -46,7 +47,7 @@ const Navbar = () => {
                 />
               )}
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>

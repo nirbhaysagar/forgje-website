@@ -1,4 +1,5 @@
 import { Instagram, Twitter, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -41,8 +42,12 @@ const Footer = () => {
             <div className="flex flex-col gap-6">
               <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-white/40">Find Work</span>
               <div className="flex flex-col gap-2.5">
-                {["Explore Jobs", "Discover Companies", "Browse Collections"].map(l => (
-                  <a key={l} href="#" className="text-sm text-white/50 hover:text-white transition-colors tracking-tight">{l}</a>
+                {[
+                  { l: "Explore Jobs", h: "/careers" },
+                  { l: "Discover Companies", h: "/about" },
+                  { l: "Browse Collections", h: "/products" }
+                ].map(item => (
+                  <Link key={item.l} to={item.h} className="text-sm text-white/50 hover:text-white transition-colors tracking-tight">{item.l}</Link>
                 ))}
               </div>
             </div>
@@ -50,8 +55,11 @@ const Footer = () => {
             <div className="flex flex-col gap-6">
               <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-white/40">Find People</span>
               <div className="flex flex-col gap-2.5">
-                {["Learn More", "Sign up"].map(l => (
-                  <a key={l} href="#" className="text-sm text-white/50 hover:text-white transition-colors tracking-tight">{l}</a>
+                {[
+                  { l: "Learn More", h: "/about" },
+                  { l: "Sign up", h: "/pricing" }
+                ].map(item => (
+                  <Link key={item.l} to={item.h} className="text-sm text-white/50 hover:text-white transition-colors tracking-tight">{item.l}</Link>
                 ))}
               </div>
             </div>
@@ -59,8 +67,12 @@ const Footer = () => {
             <div className="flex flex-col gap-6">
               <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-white/40">Company</span>
               <div className="flex flex-col gap-2.5">
-                {["About us", "Careers", "Contact"].map(l => (
-                  <a key={l} href="#" className="text-sm text-white/50 hover:text-white transition-colors tracking-tight">{l}</a>
+                {[
+                  { l: "About us", h: "/about" },
+                  { l: "Careers", h: "/careers" },
+                  { l: "Contact", h: "/contact" }
+                ].map(item => (
+                  <Link key={item.l} to={item.h} className="text-sm text-white/50 hover:text-white transition-colors tracking-tight">{item.l}</Link>
                 ))}
               </div>
             </div>
