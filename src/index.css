@@ -57,6 +57,16 @@
 @layer base {
   * {
     @apply border-border;
+    cursor: none !important;
+  }
+
+  html, body, #root {
+    height: 100%;
+    cursor: none !important;
+  }
+
+  a, button, [role="button"], input, textarea {
+    cursor: none !important;
   }
 
   html, body {

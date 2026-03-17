@@ -8,10 +8,12 @@ import EcosystemSection from "@/components/EcosystemSection";
 import SocialProofSection from "@/components/SocialProofSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground overflow-hidden">
+      <CustomCursor />
       <Navbar />
       <HeroSection />
       <AboutSection />
