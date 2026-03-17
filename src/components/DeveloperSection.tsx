@@ -26,15 +26,15 @@ const DeveloperSection = () => {
     <section id="developer" className="relative pt-36 pb-32 px-6">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-foreground/[0.06] to-transparent" />
 
-      <div className="mx-auto max-w-6xl">
-        <div className="grid gap-12 lg:gap-20 lg:grid-cols-5">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-12 lg:gap-32 lg:grid-cols-12 items-center">
           {/* Left - Copy */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease }}
-            className="lg:col-span-2 flex flex-col justify-center"
+            className="lg:col-span-5 flex flex-col justify-center"
           >
             <span className="section-label">WE MAKE SYSTEM INTERNALS TRANSPARENT.</span>
             <h2 className="section-heading">
@@ -72,7 +72,7 @@ const DeveloperSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease }}
-            className="lg:col-span-3"
+            className="lg:col-span-7"
           >
             <div className="rounded-xl border border-foreground/[0.06] bg-[hsl(240_25%_3%)] shadow-2xl overflow-hidden">
               {/* Window chrome */}
