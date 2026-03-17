@@ -184,7 +184,7 @@
   }
 
   .section-label {
-    @apply text-[10px] uppercase tracking-[0.5em] font-mono text-foreground/40 block mb-4;
+    @apply text-[30px] uppercase tracking-[0.2em] font-mono text-foreground/40 block mb-6;
   }
 
   .section-heading {

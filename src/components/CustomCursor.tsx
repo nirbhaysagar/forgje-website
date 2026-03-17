@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
-import { motion, useSpring, useMotionValue } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const CustomCursor = () => {
   const [isPointer, setIsPointer] = useState(false);
-  const cursorX = useMotionValue(-100);
-  const cursorY = useMotionValue(-100);
-
-  const springConfig = { damping: 30, stiffness: 150, mass: 0.5 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  
+  // Track actual mouse position (target)
+  const mousePos = useRef({ x: -100, y: -100 });
+  // Track animated position (delayed)
+  const delayedPos = useRef({ x: -100, y: -100 });
+  // Store animation frame ID for cleanup
+  const rafId = useRef<number | null>(null);
 
   useEffect(() => {
-    const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
+    const handleMouseMove = (e: MouseEvent) => {
+      // Update target position
+      mousePos.current = { x: e.clientX, y: e.clientY };
       
+      // Handle pointer state
       const target = e.target as HTMLElement;
       setIsPointer(
         window.getComputedStyle(target).cursor === "pointer" ||
@@ -25,25 +27,42 @@ const CustomCursor = () => {
       );
     };
 
-    window.addEventListener("mousemove", moveCursor);
-    return () => window.removeEventListener("mousemove", moveCursor);
-  }, [cursorX, cursorY]);
+    const animateCursor = () => {
+      // Interpolate current position toward target position
+      // Formula: current += (target - current) * lerpFactor
+      const lerpFactor = 0.1; // Exact 0.1 as requested
+      
+      delayedPos.current.x += (mousePos.current.x - delayedPos.current.x) * lerpFactor;
+      delayedPos.current.y += (mousePos.current.y - delayedPos.current.y) * lerpFactor;
+
+      if (cursorRef.current) {
+        // Apply transform via translate3d for GPU acceleration
+        // Centers the circle by using translateY/X -50% in CSS or offset here
+        cursorRef.current.style.transform = `translate3d(${delayedPos.current.x}px, ${delayedPos.current.y}px, 0) translate3d(-50%, -50%, 0)`;
+      }
+
+      rafId.current = requestAnimationFrame(animateCursor);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    rafId.current = requestAnimationFrame(animateCursor);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (rafId.current) cancelAnimationFrame(rafId.current);
+    };
+  }, []);
 
   return (
-    <motion.div
-      style={{
-        x: cursorXSpring,
-        y: cursorYSpring,
-        translateX: "-50%",
-        translateY: "-50%",
-      }}
-      className={`fixed top-0 left-0 w-4 h-4 rounded-full bg-white z-[9999] pointer-events-none mix-blend-difference flex items-center justify-center transition-transform duration-200 ${
+    <div
+      ref={cursorRef}
+      style={{ willChange: "transform" }}
+      className={`fixed top-0 left-0 w-4 h-4 rounded-full bg-white z-[9999] pointer-events-none mix-blend-difference flex items-center justify-center transition-transform duration-300 ease-out ${
         isPointer ? "scale-[2.5]" : "scale-100"
       }`}
     >
-      {/* Optional: Subtle inner dot for precision */}
       <div className="w-1 h-1 bg-black rounded-full opacity-20" />
-    </motion.div>
+    </div>
   );
 };
 

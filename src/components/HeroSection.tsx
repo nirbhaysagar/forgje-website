@@ -30,36 +30,18 @@ const HeroSection = () => {
               </h1>
             </motion.div>
 
-            {/* Description & CTA - Bottom Right */}
+            {/* Description - Centered */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-              className="flex max-w-sm flex-col gap-8 md:text-left"
+              className="flex max-w-sm flex-col gap-8 text-center mt-12"
             >
               <p className="text-base md:text-lg leading-relaxed text-white/50">
                 Forgje is a next-generation platform for digital builders.
                 Search code, build applications, and ship faster with
                 infrastructure-grade AI workflows.
               </p>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                className="flex items-center gap-4"
-              >
-                <a href="#cta" className="group flex items-center gap-2 rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition-all hover:bg-primary hover:text-white">
-                  Get started
-                  <motion.span
-                    className="inline-block"
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
-                  >
-                    →
-                  </motion.span>
-                </a>
-              </motion.div>
             </motion.div>
           </div>
         </div>

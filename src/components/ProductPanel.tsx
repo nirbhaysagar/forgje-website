@@ -41,7 +41,7 @@ const ProductPanel = ({
           className="flex flex-col gap-8 text-left"
         >
           <div className="flex flex-col gap-2">
-            <span className="text-[10px] uppercase tracking-[0.5em] text-white/30 font-mono">Module // 0{index + 1}</span>
+            <span className="text-[30px] uppercase tracking-[0.2em] text-white/30 font-mono">Module // 0{index + 1}</span>
             <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-[0.9] uppercase">
               {title}
             </h2>
@@ -50,7 +50,7 @@ const ProductPanel = ({
           <p className="text-xl text-white/40 max-w-md leading-relaxed">
             {description}
           </p>
-
+ 
           <button className="group relative w-fit mt-4">
             <div className="absolute inset-0 bg-white blur-md opacity-0 group-hover:opacity-20 transition-opacity" />
             <div className="relative px-10 py-4 rounded-full bg-white text-black font-bold uppercase text-[10px] tracking-[0.3em] hover:bg-neutral-100 transition-all">
@@ -58,7 +58,7 @@ const ProductPanel = ({
             </div>
           </button>
         </motion.div>
-
+ 
         {/* Right Side: Primary Visual */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
@@ -76,8 +76,8 @@ const ProductPanel = ({
             {/* Glossy / UI Overlays */}
             <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-white/5 pointer-events-none" />
             <div className="absolute bottom-8 left-8 p-4 glass-panel border-white/5 min-w-[120px]">
-              <div className="h-1 w-8 bg-primary mb-2" />
-              <span className="text-[8px] uppercase tracking-widest text-white/40">Status: Optimized</span>
+              <div className="h-1 w-8 bg-primary mb-4" />
+              <span className="text-[24px] uppercase tracking-widest text-white/40">Status: Optimized</span>
             </div>
           </div>
         </motion.div>
