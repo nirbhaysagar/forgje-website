@@ -38,13 +38,14 @@ const PromptModal = ({ isOpen, onClose }: PromptModalProps) => {
           />
 
           {/* Modal Container */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 10 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl px-6 z-[101]"
-          >
+          <div className="fixed inset-0 z-[101] flex items-center justify-center p-6 pointer-events-none">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="w-full max-w-2xl pointer-events-auto"
+            >
             <div className="glass-card-strong p-8 md:p-12 rounded-[2.5rem] border-white/10 shadow-[0_0_120px_rgba(255,255,255,0.03)] relative overflow-hidden group">
               {/* Decorative Corner Glows */}
               <div className="absolute -top-24 -left-24 w-48 h-48 bg-white/[0.03] rounded-full blur-[80px] pointer-events-none" />
@@ -109,9 +110,10 @@ const PromptModal = ({ isOpen, onClose }: PromptModalProps) => {
               </div>
             </div>
           </motion.div>
-        </>
-      )}
-    </AnimatePresence>
+        </div>
+      </>
+    )}
+  </AnimatePresence>
   );
 };
 
