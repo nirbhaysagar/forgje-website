@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 // Use public paths from the root for maximum reliability
 const HERO_IMAGE = "/about_hero.png";
-const VISION_IMAGE = "/cosmic_vision.png";
+const VISION_IMAGE = "/about_workstation.png";
 const TEAM_IMAGE = "/about_team.png";
 
 const AboutSection = () => {
