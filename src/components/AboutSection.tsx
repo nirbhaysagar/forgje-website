@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 // Use public paths from the root for maximum reliability
 const HERO_IMAGE = "/about_hero.png";
-const PCB_IMAGE = "/about_pcb.png";
+const VISION_IMAGE = "/cosmic_vision.png";
 const TEAM_IMAGE = "/about_team.png";
 
 const AboutSection = () => {
@@ -18,9 +18,9 @@ const AboutSection = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <section ref={containerRef} className="relative min-h-[250vh] bg-transparent text-white px-6 md:px-20 py-32 overflow-hidden">
+    <section ref={containerRef} className="relative min-h-screen bg-transparent text-white px-6 md:px-20 py-32 overflow-hidden">
       {/* Top Section - Large Editorial Heading */}
-      <div className="relative mb-64 max-w-[1400px] mx-auto">
+      <div className="relative mb-32 max-w-[1400px] mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ const AboutSection = () => {
       </div>
 
       {/* Middle Section - Portfolio Style Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24 mb-64 max-w-[1400px] mx-auto items-center">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24 mb-32 max-w-[1400px] mx-auto items-center">
         <motion.div 
           style={{ y: y2 }}
           className="md:col-span-5"
@@ -99,13 +99,13 @@ const AboutSection = () => {
 
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 group">
             <img 
-              src={PCB_IMAGE} 
-              alt="Circuit Board Detail" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+              src={VISION_IMAGE} 
+              alt="Cosmic Vision" 
+              className="w-full h-full object-cover grayscale brightness-110 contrast-110 transition-transform duration-1000 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-700" />
             <div className="absolute bottom-8 right-8 text-right">
-              <span className="text-[10px] uppercase tracking-[0.4em] text-white/40">Hardware Abstraction Layer v2.1</span>
+              <span className="text-[10px] uppercase tracking-[0.4em] text-white/40">Infrastructure Research Lab v1.0</span>
             </div>
           </div>
         </div>
@@ -126,10 +126,6 @@ const AboutSection = () => {
           </h4>
         </motion.div>
         
-        <div className="mt-32 border-t border-white/10 pt-12 flex flex-col items-center gap-4">
-          <span className="text-[10px] uppercase tracking-[0.5em] text-white/20">Orbital Grade AI Infrastructure</span>
-          <div className="w-px h-24 bg-gradient-to-b from-primary to-transparent" />
-        </div>
       </div>
 
       {/* Background Decorative elements */}

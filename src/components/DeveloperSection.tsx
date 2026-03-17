@@ -23,7 +23,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 const DeveloperSection = () => {
   return (
-    <section id="developer" className="relative pt-36 pb-32 px-6">
+    <section id="developer" className="relative pt-36 pb-12 px-6">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-foreground/[0.06] to-transparent" />
 
       <div className="mx-auto max-w-7xl">

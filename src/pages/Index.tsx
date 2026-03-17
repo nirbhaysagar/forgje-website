@@ -6,6 +6,7 @@ import CapabilitiesSection from "@/components/CapabilitiesSection";
 import DeveloperSection from "@/components/DeveloperSection";
 import EcosystemSection from "@/components/EcosystemSection";
 import SocialProofSection from "@/components/SocialProofSection";
+import ComparisonSection from "@/components/ComparisonSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
@@ -24,6 +25,7 @@ const Index = () => {
       <StickyProductSection />
       <CapabilitiesSection />
       <DeveloperSection />
+      <ComparisonSection />
       <EcosystemSection />
       <SocialProofSection />
       <CTASection />

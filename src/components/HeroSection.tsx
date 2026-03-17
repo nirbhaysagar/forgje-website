@@ -1,7 +1,9 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useScroll, motion } from "framer-motion";
+import PromptModal from "./PromptModal";
 
 const HeroSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -30,22 +32,38 @@ const HeroSection = () => {
               </h1>
             </motion.div>
 
-            {/* Description - Centered */}
+            {/* Description & CTAs - Centered */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-              className="flex max-w-sm flex-col gap-8 text-center mt-12"
+              className="flex flex-col items-center gap-10 mt-12 pointer-events-auto"
             >
-              <p className="text-base md:text-lg leading-relaxed text-white/50">
+              <p className="text-base md:text-lg leading-relaxed text-white/50 max-w-sm">
                 Forgje is a next-generation platform for digital builders.
                 Search code, build applications, and ship faster with
                 infrastructure-grade AI workflows.
               </p>
+
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="group relative px-10 py-4 rounded-full bg-white text-black font-bold uppercase text-[10px] tracking-[0.3em] overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-neutral-200 via-white to-neutral-200 group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                  <span className="relative z-10">Get 1 step closer to future</span>
+                </button>
+                
+                <button className="px-10 py-4 rounded-full border border-white/20 text-white/60 font-medium uppercase text-[10px] tracking-[0.3em] hover:bg-white/5 hover:text-white transition-all">
+                  Documentation
+                </button>
+              </div>
             </motion.div>
           </div>
         </div>
       </div>
+
+      <PromptModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

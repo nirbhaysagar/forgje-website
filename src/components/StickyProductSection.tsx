@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ProductPanel from "./ProductPanel";
 
 const products = [
@@ -24,46 +24,37 @@ const products = [
 ];
 
 const StickyProductSection = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
   return (
-    <section 
-      ref={containerRef}
-      id="products"
-      className="relative w-full bg-transparent py-20"
-    >
-      {/* Section Header */}
-      <div className="max-w-7xl mx-auto px-12 mb-20 relative z-20">
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-3">
-            <div className="h-[1px] w-8 bg-white/20" />
-            <span className="section-label mb-0">
-              WE SHIP THE FUTURE OF AI WORKSPACE.
-            </span>
+    <section id="products" className="py-24 md:py-32 px-6 bg-transparent">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="mb-24 px-6 md:px-0">
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <div className="h-[1px] w-8 bg-white/20" />
+              <span className="section-label mb-0">
+                WE SHIP THE FUTURE OF AI WORKSPACE.
+              </span>
+            </div>
+            <h2 className="section-heading">
+              Core <span className="section-heading-muted">Infrastructure</span>
+            </h2>
           </div>
-          <h2 className="section-heading">
-            Core <span className="section-heading-muted">Infrastructure</span>
-          </h2>
         </div>
-      </div>
 
-      <div className="flex flex-col gap-0">
-        {products.map((product, i) => (
-          <ProductPanel
-            key={i}
-            title={product.title}
-            description={product.description}
-            cta={product.cta}
-            index={i}
-            progress={scrollYProgress}
-            total={products.length}
-            mainImage={product.mainImage}
-          />
-        ))}
+        {/* Product Panels - Normal Vertical Flow */}
+        <div className="flex flex-col gap-24">
+          {products.map((product, i) => (
+            <ProductPanel
+              key={i}
+              title={product.title}
+              description={product.description}
+              cta={product.cta}
+              index={i}
+              mainImage={product.mainImage}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ export default {
       },
       fontFamily: {
         sans: ["Space Grotesk", "sans-serif"],
-        "serif-editorial": ["Playfair Display", "serif"],
+        "serif-editorial": ["Instrument Serif", "serif"],
       },
     },
     extend: {
