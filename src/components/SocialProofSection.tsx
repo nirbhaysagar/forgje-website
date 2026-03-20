@@ -18,7 +18,7 @@ const SocialProofSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="section-label">WE POWER THE WORLD'S FASTEST TEAMS.</span>
+          <span className="section-label">We power the world's fastest teams.</span>
           <h2 className="section-heading">
             Trusted by developers worldwide.
           </h2>
@@ -37,7 +37,7 @@ const SocialProofSection = () => {
               <span className="block text-5xl md:text-6xl font-bold tracking-tighter text-white glow-text-strong">
                 {stat.value}
               </span>
-              <span className="mt-4 block text-[10px] text-white/40 tracking-[0.5em] uppercase font-mono">
+              <span className="mt-4 block text-[10px] text-white/40 tracking-[0.5em] font-mono">
                 {stat.label}
               </span>
             </motion.div>

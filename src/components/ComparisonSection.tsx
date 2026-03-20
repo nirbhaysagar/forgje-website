@@ -3,35 +3,35 @@ import { motion } from "framer-motion";
 const comparisons = [
   {
     feature: "Autonomy Level",
-    forgje: "Full-stack Autonomous",
+    forion: "Full-stack Autonomous",
     lovable: "UI-First Guided",
-    blackbox: "Code Completion",
+    blackbox: "Code Code Completion",
     highlight: true
   },
   {
     feature: "Infrastructure Control",
-    forgje: "Direct AWS/GCP Sync",
+    forion: "Direct AWS/GCP Sync",
     lovable: "Managed Sandbox",
     blackbox: "Local IDE Only",
     highlight: true
   },
   {
     feature: "Real-time Debugging",
-    forgje: "State-aware Tracing",
+    forion: "State-aware Tracing",
     lovable: "Browser Preview",
     blackbox: "Console Logs",
     highlight: true
   },
   {
     feature: "Model Flexibility",
-    forgje: "Any Model (OpenRouter)",
+    forion: "Any Model (OpenRouter)",
     lovable: "Fixed GPT-4o/Sonnet",
     blackbox: "Blackbox Proprietary",
     highlight: true
   },
   {
     feature: "Speed to Ship",
-    forgje: "Minutes (Infrastructure Ready)",
+    forion: "Minutes (Infrastructure Ready)",
     lovable: "Hours (UI Focus)",
     blackbox: "Days (Manual Setup)",
     highlight: true
@@ -50,8 +50,8 @@ const ComparisonSection = () => {
             className="flex flex-col items-center gap-4"
           >
             <span className="section-label">Competition</span>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-6 text-white max-w-4xl">
-              Forgje — Your <span className="text-gradient-primary">Absolute Edge</span> in Development
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-white max-w-4xl italic font-serif-editorial">
+              Forion — Your <span className="text-gradient-primary">Absolute Edge</span> in Development
             </h2>
             <p className="text-white/40 font-mono text-sm tracking-widest uppercase">
               See how we stack up against industry standards.
@@ -72,7 +72,7 @@ const ComparisonSection = () => {
                         <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.2)]">
                           <span className="text-black font-black text-xl">F</span>
                         </div>
-                        <span className="text-xl font-bold text-white uppercase tracking-tighter">Forgje</span>
+                        <span className="text-xl font-bold text-white uppercase tracking-tighter">Forion</span>
                       </div>
                     </th>
                     <th className="p-12">
@@ -109,9 +109,9 @@ const ComparisonSection = () => {
                       <td className="p-12 bg-white/[0.02] border-x border-white/5 shadow-[inset_0_0_40px_rgba(255,255,255,0.01)]">
                         <div className="flex items-center gap-3">
                           <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
-                            <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
-                          <span className="font-bold text-white tracking-tight">{row.forgje}</span>
+                          <span className="font-bold text-white tracking-tight">{row.forion}</span>
                         </div>
                       </td>
                       <td className="p-12 text-white/30 font-medium">

@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
 const codeLines = [
-  { text: "// forgje: generate auth middleware", color: "text-muted-foreground", highlight: false },
-  { text: "import { verify } from '@forgje/auth';", color: "text-foreground/60", highlight: false },
+  { text: "// forion: generate auth middleware", color: "text-muted-foreground", highlight: false },
+  { text: "import { verify } from '@forion/auth';", color: "text-foreground/60", highlight: false },
   { text: "", color: "", highlight: false },
   { text: "export async function middleware(req) {", color: "text-foreground/60", highlight: false },
   { text: "  const token = req.headers.get('authorization');", color: "text-foreground/50", highlight: false },
@@ -36,14 +36,14 @@ const DeveloperSection = () => {
             transition={{ duration: 0.9, ease }}
             className="lg:col-span-5 flex flex-col justify-center"
           >
-            <span className="section-label">WE MAKE SYSTEM INTERNALS TRANSPARENT.</span>
+            <span className="section-label">We make system internals transparent.</span>
             <h2 className="section-heading">
               Beyond the <br />
               <span className="section-heading-muted">Black Box.</span>
             </h2>
             <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
-                Every generation is deterministic and auditable. Forgje understands your codebase, your patterns, and your intent.
+                Every generation is deterministic and auditable. Forion understands your codebase, your patterns, and your intent.
               </p>
               <p>
                 Context-aware inference that ships production code — not suggestions. Low-latency, high-fidelity output.
@@ -119,7 +119,7 @@ const DeveloperSection = () => {
                 </div>
                 <div className="px-5 py-3 font-mono text-[11px] text-muted-foreground/60 flex items-center gap-2">
                   <span className="text-primary/70">❯</span>
-                  <span>forgje generate --context-aware</span>
+                  <span>forion generate --context-aware</span>
                   <span className="h-3.5 w-px bg-primary/60 animate-pulse-glow" />
                 </div>
               </div>
@@ -129,7 +129,7 @@ const DeveloperSection = () => {
                 <div className="flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-glow" />
                   <span className="text-[10px] font-mono text-muted-foreground/50">
-                    Forgje AI · context-aware · deterministic
+                    Forion AI · context-aware · deterministic
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-muted-foreground/30">

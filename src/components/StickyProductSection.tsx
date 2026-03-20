@@ -4,7 +4,7 @@ import ProductPanel from "./ProductPanel";
 
 const products = [
   {
-    title: "Forgje IDE",
+    title: "Forion IDE",
     description: "AI-powered development environment built for absolute precision and orbital speed.",
     cta: "Explore IDE",
     mainImage: "/ide_mockup.png",
@@ -16,8 +16,8 @@ const products = [
     mainImage: "/orbit_mockup.png",
   },
   {
-    title: "Coming Soon",
-    description: "A new paradigm in autonomous engineering infrastructure is launching soon.",
+    title: "Spark Engine",
+    description: "The high-frequency core for autonomous engineering infrastructure. Powering the next generation of Forion.",
     cta: "Register Interest",
     mainImage: "/soon_mockup.png",
   },

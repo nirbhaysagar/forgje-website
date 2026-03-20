@@ -20,7 +20,7 @@ const CTASection = () => {
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] leading-[0.95] mb-7 glow-text-strong">
             Launch your next idea
             <br />
-            <span className="text-foreground/30">with Forgje.</span>
+            <span className="text-foreground/30">with Forion.</span>
           </h2>
 
           <p className="text-muted-foreground text-lg mb-12 max-w-lg mx-auto leading-relaxed">

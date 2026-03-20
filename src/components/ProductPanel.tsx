@@ -21,7 +21,7 @@ const ProductPanel = ({
   mainImage,
 }: Omit<ProductPanelProps, "progress" | "total">) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   return (
     <motion.div
       ref={containerRef}
@@ -33,7 +33,7 @@ const ProductPanel = ({
     >
       {/* Product Card / Panel */}
       <div className="relative w-full glass-card-strong border-white/10 rounded-[3rem] overflow-hidden flex flex-col md:flex-row items-center gap-12 p-8 md:p-20 shadow-[0_0_100px_rgba(0,0,0,0.4)]">
-        
+
         {/* Cinematic Grid Backdrop */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:100px_100px] pointer-events-none" />
         <div className="absolute inset-0 bg-radial-at-c from-white/[0.015] to-transparent pointer-events-none" />
@@ -61,17 +61,17 @@ const ProductPanel = ({
 
         {/* Visual / Demo Area */}
         <div className={`flex-[1.2] w-full relative group h-[400px] md:h-auto md:aspect-video
-                        ${title === "Forgje IDE" ? "md:scale-110" : ""}`}>
+                        ${title === "Forion IDE" ? "md:scale-110" : ""}`}>
           <div className={`w-full h-full rounded-[2rem] border overflow-hidden shadow-2xl transition-all duration-700 
-                          ${title === "Orbit Builder" 
-                            ? "bg-black/80 border-white/20 shadow-[0_0_50px_rgba(255,255,255,0.05)]" 
-                            : title === "Forgje IDE"
-                            ? "bg-black border-blue-500/30 shadow-[0_0_80px_rgba(59,130,246,0.15)]"
-                            : "bg-neutral-900/50 border-white/10 hover:border-white/20"}`}>
-            
+                          ${title === "Orbit Builder"
+              ? "bg-black/80 border-white/20 shadow-[0_0_50px_rgba(255,255,255,0.05)]"
+              : title === "Forion IDE"
+                ? "bg-black border-blue-500/30 shadow-[0_0_80px_rgba(59,130,246,0.15)]"
+                : "bg-neutral-900/50 border-white/10 hover:border-white/20"}`}>
+
             {title === "Orbit Builder" ? (
               <OrbitDemo />
-            ) : title === "Forgje IDE" ? (
+            ) : title === "Forion IDE" ? (
               <IDEDemo />
             ) : (
               <img
