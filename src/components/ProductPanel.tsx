@@ -11,6 +11,7 @@ interface ProductPanelProps {
   progress: any;
   total: number;
   mainImage: string;
+  features?: string[];
 }
 
 const ProductPanel = ({
@@ -19,6 +20,7 @@ const ProductPanel = ({
   cta,
   index,
   mainImage,
+  features,
 }: Omit<ProductPanelProps, "progress" | "total">) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -50,6 +52,17 @@ const ProductPanel = ({
           <p className="text-lg md:text-xl text-white/40 max-w-md leading-relaxed">
             {description}
           </p>
+
+          {features && (
+            <ul className="flex flex-col gap-3 mt-2">
+              {features.map((feature, i) => (
+                <li key={i} className="flex items-center gap-3 text-sm md:text-base text-white/60 font-mono tracking-tight">
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          )}
 
           <button className="group relative w-fit mt-4">
             <div className="absolute inset-0 bg-white blur-md opacity-0 group-hover:opacity-20 transition-opacity" />

@@ -152,7 +152,7 @@ const BlackHole = () => {
   });
 
   return (
-    <mesh ref={meshRef} position={[0, 0, 0]} scale={[24, 24, 1]}>
+    <mesh ref={meshRef} position={[0, 0, 0]} scale={[17, 17, 1]}>
       <planeGeometry args={[1, 1]} />
       <shaderMaterial
         attach="material"

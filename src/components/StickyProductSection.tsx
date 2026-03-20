@@ -4,22 +4,18 @@ import ProductPanel from "./ProductPanel";
 
 const products = [
   {
-    title: "Forion IDE",
-    description: "AI-powered development environment built for absolute precision and orbital speed.",
-    cta: "Explore IDE",
-    mainImage: "/ide_mockup.png",
-  },
-  {
-    title: "Orbit Builder",
-    description: "Architect full-scale AI systems instantly with the world's first cosmic builder.",
+    title: "Orbit",
+    description: "Turn ideas into real software.",
     cta: "Explore Orbit",
     mainImage: "/orbit_mockup.png",
+    features: ["Prompt → full app", "Instant preview", "Editable code"],
   },
   {
-    title: "Spark Engine",
-    description: "The high-frequency core for autonomous engineering infrastructure. Powering the next generation of Forion.",
-    cta: "Register Interest",
+    title: "Spark",
+    description: "Autonomous agents for your codebase.",
+    cta: "Explore Spark",
     mainImage: "/soon_mockup.png",
+    features: ["GitHub integration", "Multi-agent workflows", "Async execution"],
   },
 ];
 
@@ -49,6 +45,7 @@ const StickyProductSection = () => {
               key={i}
               title={product.title}
               description={product.description}
+              features={product.features}
               cta={product.cta}
               index={i}
               mainImage={product.mainImage}
